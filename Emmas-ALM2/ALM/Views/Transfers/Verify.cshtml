@@ -1,0 +1,19 @@
+﻿@model ALM.ViewModels.VerifyTransactionViewModel
+
+@{
+    ViewData["Title"] = "Verifiering";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <h5><b>@Model.FromAccount.Name @Model.FromAccount.LastName</b> med kundnummer: @Model.FromAccount.PersonId </h5>
+        <h5>har nytt belopp @Model.FromAccount.Money (Kr) på Kontonummer: @Model.FromAccount.AccountId</h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <h5><b>@Model.ToAccount.Name @Model.ToAccount.LastName</b> med kundnummer: @Model.ToAccount.PersonId </h5>
+        <h5>har nytt belopp @Model.ToAccount.Money (Kr) på Kontonummer: @Model.ToAccount.AccountId</h5>
+    </div>
+</div>

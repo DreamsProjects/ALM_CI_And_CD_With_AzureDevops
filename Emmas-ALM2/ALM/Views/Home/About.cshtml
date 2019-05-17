@@ -1,0 +1,40 @@
+﻿@model List<ALM.Models.Customer>
+
+@{
+    ViewData["Title"] = "Skicka epost";
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <h2>E-post hanteraren</h2>
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-11">
+        <ul>
+
+            @foreach (var values in Model)
+            {
+                <li>
+                    <h4><b>@values.Name @values.LastName</b>  har kundnummer: @values.PersonId </h4><br />
+                    @foreach (var item in values.Account)
+                    {
+                        <h4>Saldo på konto nummer @item.AccountId är @item.Money:-</h4><br />
+                    }
+                    <form asp-controller="Home" asp-action="EmailSender" asp-route-number="" method="post">
+                        <input name="number" type="hidden"  asp-for="@values.PersonId" />
+                        <input type="submit" class="btn-sm btn-success" value="Skicka E-post" />
+                    </form>
+                    <hr />
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>
+
+<style>
+    li {
+        list-style: none;
+    }
+</style>

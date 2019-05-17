@@ -1,0 +1,13 @@
+﻿@model ALM.Models.Account
+
+@{
+    ViewData["Title"] = "Verifiering";
+}
+
+
+<div class="row">
+    <div class="col-md-7">
+        <h5><b>@Model.Name @Model.LastName</b>  med kundnummer: @Model.PersonId </h5>
+        <h5>Har nytt belopp: @Model.Money</h5>
+    </div>
+</div>
